@@ -21,4 +21,4 @@
 > in questa pagina il modulo è correttamente collegato alla libreria di invio mail @emailjs.com
 > da cui è possibile contattarmi
 
-Link diretto alla web app: [PIZZA-LOVER](https://prismatic-rabanadas-588c93.netlify.app/)
+Link diretto alla web app: [PIZZA-LOVER](https://master--jovial-sopapillas-a33ef3.netlify.app/)

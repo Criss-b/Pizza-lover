@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: ananias;
+  src: url("nf-ananias-regular.ttf");
+  font-display: swap;
+}
+::selection {
+  background: rgb(251, 191, 26);
+}
+body {
+  font-family: ananias;
+}
+#indexImage {
+  height: auto;
+  width: 100%;
+}
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  background-color: #282525;
+  height: auto;
+  width: auto;
+}

@@ -1,77 +1,103 @@
 <template>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <img
-          @click="$router.push({ name: 'index' })"
-          src="@/assets/img/icons8-pizza-96.png"
-          alt="logo"
-          id="logo"
-        />
-  
-        <RouterLink to="/menu">
-          <a
-            @click="'clicked', $router.push({ name: 'menu' })"
-            role="button"
-            class="navbar-burger"
-            data-target="navMenu"
-            aria-label="menu"
-            aria-expanded="false"
-          >
-            <span aria-hidden="true" style="color: #fa5252"></span>
-            <span aria-hidden="true" style="color: #fa5252"></span>
-            <span aria-hidden="true" style="color: #fa5252"></span>
-          </a>
-        </RouterLink>
-      </div>
-  
-      <div class="navbar-menu" id="navMenu">
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <RouterLink to="/">
-              <button @click="$router.push({ name: 'index' })">HOME</button>
-            </RouterLink>
-  
-            <RouterLink to="/pizze">
-              <button @click="$router.push({ name: 'pizze' })">PIZZE</button>
-            </RouterLink>
-  
-            <RouterLink to="/create">
-              <button @click="$router.push({ name: 'create' })">
-                CREA LA TUA PIZZA
-              </button>
-            </RouterLink>
-  
-            <RouterLink to="/book">
-              <button @click="$router.push({ name: 'book' })">PRENOTA</button>
-            </RouterLink>
-  
-            <RouterLink to="/contacts">
-              <button @click="$router.push({ name: 'contacts' })">
-                CONTATTI
-              </button>
-            </RouterLink>
-          </div>
-        </div>
-      </div>
-    </nav>
+  <div class="menuContainer">
+    <div class="logoContainer">
+      <RouterLink to="/">
+          <img 
+              id="logo" 
+              :src="imgDefault" 
+              alt=""
+              @click="clickTo({name: 'index'})"
+              >
+      </RouterLink>
+    </div>
+    <div class="btnContainer">
+      <RouterLink to="/">
+        <button @click="clickTo({ name: 'index' })">HOME</button>
+      </RouterLink>
+      <RouterLink to="/pizze">
+        <button @click="clickTo({ name: 'pizze' })">PIZZE</button>
+      </RouterLink>
+      <RouterLink to="/create">
+        <button @click="clickTo({ name: 'create' })">
+          CREA LA TUA PIZZA
+        </button>
+      </RouterLink>
+      <RouterLink to="/book">
+        <button @click="clickTo({ name: 'book' })">PRENOTA</button>
+      </RouterLink>
+      <RouterLink to="/contacts">
+        <button @click="clickTo({ name: 'contacts' })">
+          CONTATTI
+        </button>
+      </RouterLink>
+    </div>
+  </div>
+  <div  
+      class="menuBurger"
+      @click="toggleMenu"
+      :class="{ 'is-active': menuActive }"
+      @menuOff="menuOff($event)">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </div>
   </template>
   
   <script>
+import { mapMutations, mapState } from 'vuex';
+
   export default {
     name: "navbarSect",
+    data() {
+        return {
+          imgDefault: require("@/assets/img/icons8-pizza-96.png"),
+        };
+      },
+      computed: {
+        ...mapState(["menuActive"]),
+      },
+      methods: {
+        ...mapMutations(["SET_MENU_ACTIVE"]),
+        toggleMenu() {
+          this.SET_MENU_ACTIVE(!this.menuActive);
+          if(this.menuActive) {
+            this.$router.push({ name: "menu"});
+          } else {
+            this.$router.go(-1);
+          }
+          
+        },
+        clickTo(to) {
+          this.$router.push(to);
+        },
+    }
   };
   </script>
   
   <style lang="scss" scoped>
-  .navbar {
+    .menuContainer {
+      height: 80px;
+      background-color: #282525;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+  }
+  .logoContainer {
+    padding: 0;
     background-color: #282525;
   }
-  
-  .navbar-brand {
-    margin-left: 10px;
-    padding: 0;
+
+  .btnContainer {
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: row;
+      align-items: center;
   }
   #logo {
+    position: absolute;
+    left: 10px;
+    top: 10px;
     width: 64px;
     height: 64px;
   }
@@ -96,13 +122,47 @@
   #logo:hover {
     transform: rotate(335deg);
   }
-  
+  .menuBurger {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 4;
+}
+.menuBurger span {
+    display: block;
+    background-color: #fa5252;
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+}
+
+.menuBurger.is-active span:nth-child(2) {
+    opacity: 0;
+}
+.menuBurger.is-active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.menuBurger.is-active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
   @media only screen and (max-width: 350px) {
     #logo {
       height: 48px;
       width: 48px;
     }
   }
+  @media only screen and (max-width: 964px) {
+    .btnContainer {
+        display: none;
+    }
+  }
+  @media only screen and (min-width: 965px) {
+    .menuBurger {
+        display: none;
+    }
+}
   @media only screen and (min-width: 351px) and (max-width: 1300px) {
     #logo {
       height: 64px;

@@ -2,32 +2,42 @@
     <div class="containerMenu">
       <div class="menu">
         <RouterLink to="/">
-          <button @click="$router.push({ name: 'index' })">HOME</button>
+          <button @click="clickTo({ name: 'index' })">HOME</button>
         </RouterLink>
   
         <RouterLink to="/pizze">
-          <button @click="$router.push({ name: 'pizze' })">PIZZE</button>
+          <button @click="clickTo({ name: 'pizze' })">PIZZE</button>
         </RouterLink>
   
         <RouterLink to="/create">
-          <button @click="$router.push({ name: 'create' })">
+          <button @click="clickTo({ name: 'create' })">
             CREA LA TUA PIZZA
           </button>
         </RouterLink>
   
         <RouterLink to="/book">
-          <button @click="$router.push({ name: 'book' })">PRENOTA</button>
+          <button @click="clickTo({ name: 'book' })">PRENOTA</button>
         </RouterLink>
         <RouterLink to="/contacts">
-          <button @click="$router.push({ name: 'contacts' })">CONTATTI</button>
+          <button @click="clickTo({ name: 'contacts' })">CONTATTI</button>
         </RouterLink>
       </div>
     </div>
   </template>
   
   <script>
+import { mapMutations } from 'vuex';
+
   export default {
     name: "menuPage",
+    methods: {
+      ...mapMutations(["SET_MENU_ACTIVE"]),
+      clickTo(to) {
+          this.SET_MENU_ACTIVE(false);
+          this.$router.push(to);
+      },
+    }
+
   };
   </script>
   

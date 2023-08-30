@@ -1,7 +1,7 @@
 import { createStore } from "vuex";
 import VuexPersistence from "vuex-persist";
 import createPlugin from "logrocket-vuex";
-import LogRocket from "logrocket";
+import LogRocket, { log } from "logrocket";
 
 const vuexLocal = new VuexPersistence({
   storage: window.localStorage,
@@ -10,6 +10,7 @@ const logrocketPlugin = createPlugin(LogRocket);
 
 export default createStore({
   state: {
+    menuActive: true,
     newPizze: [
       {
         tasty: "salame verde",
@@ -31,6 +32,9 @@ export default createStore({
   plugins: [vuexLocal.plugin, logrocketPlugin],
   getters: {},
   mutations: {
+    SET_MENU_ACTIVE(state, payload) {
+      state.menuActive = payload;
+    },
     CREATE_PIZZA(state, payload) {
       const { tasty, ing, price } = payload;
       state.newPizze.push({ tasty, ing, price });

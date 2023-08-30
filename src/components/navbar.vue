@@ -124,8 +124,8 @@ import { mapMutations, mapState } from 'vuex';
   }
   .menuBurger {
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 20px;
+    top: 20px;
     display: inline-block;
     cursor: pointer;
     z-index: 4;

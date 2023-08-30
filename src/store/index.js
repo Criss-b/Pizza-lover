@@ -10,7 +10,7 @@ const logrocketPlugin = createPlugin(LogRocket);
 
 export default createStore({
   state: {
-    menuActive: true,
+    menuActive: false,
     newPizze: [
       {
         tasty: "salame verde",

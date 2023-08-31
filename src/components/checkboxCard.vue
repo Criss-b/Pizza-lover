@@ -1,5 +1,5 @@
 <template>
-    <div class="card" style="width: 18rem">
+    <div class="card">
       <div class="imgContainer">
         <img src="@/assets/img/basil.png" />
         <img src="@/assets/img/thyme.png" />
@@ -8,6 +8,7 @@
         <h5 class="card-title">5) Scegli le spezie</h5>
         <label class="labelCheckbox" v-for="item in spices" :key="item.id">
           <input
+            :name="item.name"
             type="checkbox"
             class="checkbox"
             :checked="item.checked"
@@ -50,17 +51,6 @@
   </script>
   
   <style lang="scss" scoped>
-  .card {
-    margin: 7px;
-    background-color: #282525;
-    color: white;
-    box-shadow: 2px 2px 2px rgba(245, 245, 245, 0.347);
-  }
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
   .imgContainer {
     display: flex;
     flex-direction: row;
@@ -69,15 +59,15 @@
   .imgContainer img {
     width: 50px;
     height: 50px;
-    margin-top: 10px;
+    margin-top: 1rem;
   }
   
   .labelCheckbox {
     color: white;
     display: flex;
     align-items: center;
-    margin-top: 20px;
-    font-size: 20px;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -86,14 +76,14 @@
   
   .labelCheckbox input {
     opacity: 0;
-    margin-left: 25px;
+    margin-left: 1.6rem;
   }
   
   .checkmark {
     position: absolute;
     width: 30px;
     height: 30px;
-    margin-top: 2px;
+    margin-top: 0.3rem;
     left: 15px;
     background-color: #3b3838;
     border-radius: 5px;

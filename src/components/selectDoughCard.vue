@@ -1,5 +1,5 @@
 <template>
-    <div class="card" style="width: 18rem">
+    <div class="card">
       <img
         v-if="doughSelected"
         :src="require('@/assets/img/' + doughSelected.url)"
@@ -14,6 +14,7 @@
         </p>
         <select
           class="selectDough styleBox"
+          name="dough"
           :class="{ doughSelected: doughSelected }"
           v-model="doughSelected"
           @change="onDoughSelected"

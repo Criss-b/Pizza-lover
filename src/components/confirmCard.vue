@@ -1,5 +1,5 @@
 <template>
-    <div class="card" style="width: 18rem">
+    <div class="card">
       <div class="card-body">
         <h5 class="card-title">7) Aggiungi all'elenco</h5>
         <p class="card-text">
@@ -49,35 +49,25 @@
           });
         }
       },
+     
     },
   };
   </script>
   
   <style lang="scss" scoped>
-  .card {
-    margin: 7px;
-    background-color: #282525;
-    color: white;
-    box-shadow: 2px 2px 2px rgba(245, 245, 245, 0.347);
-  }
   .card-body {
-    display: flex;
-    flex-direction: column;
     justify-content: flex-start;
-  }
-  .card-text {
-    font-size: 13px;
   }
   .btnContainer {
     display: flex;
     justify-content: center;
-    margin-bottom: 15px;
+    margin-bottom: 0.9rem;
   }
   .btn {
     height: 25px;
     width: 90%;
     font-size: 10px;
-    margin-top: 5px;
+    margin-top: 0.8rem;
   }
   </style>
   

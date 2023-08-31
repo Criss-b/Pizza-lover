@@ -1,16 +1,18 @@
 <template>
-    <div class="card" style="width: 18rem">
+    <div class="card">
       <div class="card-body">
         <h5 class="card-title">6) La tua pizza</h5>
-        <p class="card-text" v-if="myPizza">
+        <p class="card-text">
           {{ showName }} <br />
           {{ showIngredients }} <br />
           {{ showTotal }} <br />
         </p>
         <div class="btnContainer">
-          <booking-button class="btnClass" :value="confirm" required
-            >{{ confirm }}
-          </booking-button>
+          <bookingButton 
+            class="btnClass" 
+            :value="confirm"
+            required
+            >{{ confirm }}</bookingButton>
         </div>
       </div>
     </div>
@@ -33,10 +35,9 @@
         type: [Array],
       },
     },
-  
     computed: {
       showName() {
-        const name = this.myPizza[0];
+       const name = this.myPizza[0];
         if (name == undefined) {
           return `nome: `;
         } else {
@@ -68,46 +69,26 @@
   </script>
   
   <style lang="scss" scoped>
-  .card {
-    margin: 7px;
-    background-color: #282525;
-    color: white;
-    box-shadow: 2px 2px 2px rgba(245, 245, 245, 0.347);
-  }
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .card-text {
-    font-size: 13px;
-  }
+ 
   .btnContainer {
     display: flex;
-    justify-content: center;
-    margin-bottom: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 0.9rem;
   }
-  .btnClass {
+   .btnClass {
     text-align: center;
-    height: 35px;
+    height: 25px;
     width: 90%;
     font-size: 10px;
-    font-family: ananias;
-    color: white;
-    background-color: #282525;
-    margin-top: 100px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px rgba(245, 245, 245, 0.347);
-  }
-  .btnClass:hover {
-    background-color: #3b3838;
+    margin-top: 2rem;
   }
   @media only screen and (max-width: 350px) {
-    .btnClass {
+   .btnClass {
       height: 25px;
-      font-size: 15px;
-      margin-top: 20px;
+      font-size: 0.9rem;
+      margin-top: 3rem;
     }
   }
   </style>

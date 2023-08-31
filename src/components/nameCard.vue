@@ -1,5 +1,5 @@
 <template>
-    <div class="card" style="width: 18rem">
+    <div class="card">
       <img class="card-img-top" src="@/assets/img/namePizza.png" />
       <div class="card-body">
         <h5 class="card-title">1) Scegli un nome per la tua pizza</h5>
@@ -41,37 +41,6 @@
   </script>
   
   <style lang="scss" scoped>
-  .card {
-    margin: 7px;
-    background-color: #282525;
-    color: white;
-    box-shadow: 2px 2px 2px rgba(245, 245, 245, 0.347);
-  }
-  .card-img-top {
-    margin-left: 40%;
-    margin-top: 10px;
-    width: 50px;
-    height: 50px;
-  }
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .card-text {
-    font-size: 13px;
-  }
-  .styleBox {
-    border: none;
-    border-radius: 7px;
-    height: 50px;
-    padding-left: 10px;
-  }
-  .styleBox:focus {
-    border: 3px solid rgba(66, 123, 248, 0.676);
-    outline: none;
-  }
-  
   .inputTextContainer {
     display: flex;
     flex-direction: column;

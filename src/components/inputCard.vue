@@ -1,5 +1,5 @@
 <template>
-    <div class="card" style="width: 18rem">
+    <div class="card">
       <div class="imgContainer">
         <img src="@/assets/img/pancetta.png" />
         <img src="@/assets/img/patata.png" />
@@ -9,49 +9,22 @@
         <h5 class="card-title">4) Scegli la farcitura</h5>
         <p class="card-text">Scrivi fino a 3 ingredienti: <br />(1.00 € cad)</p>
         <div class="inputTextContainer">
-          <input
+          <input v-for="(input, id) in inputs"
+            :key="id"
             class="styleBox"
             type="text"
-            placeholder="es. prosciutto crudo.."
-            :value="first.value"
-            :index="first.id"
-            :amount="first.amount"
-            @change="onInputFirst"
-          />
-          <input
-            class="styleBox"
-            type="text"
-            placeholder="es. patate al forno.."
-            :value="second.value"
-            :index="second.id"
-            :amount="second.amount"
-            @change="onInputSecond"
-          />
-          <input
-            class="styleBox"
-            type="text"
-            id="third"
-            placeholder="es. brie.."
-            :value="third.value"
-            :index="third.id"
-            :amount="third.amount"
-            @change="onInputThird"
+            :placeholder="input.placeholder"
+            :value="input.value"
+            :amount="input.amount"
+            :name="input.name"
+            @change="onInput(id, $event.target.value)"
           />
         </div>
-  
         <div class="btnContainer">
           <bookingButton
             class="btn"
             :value="value"
-            @click="
-              $emit('updateInput', {
-                allInput: {
-                  firstInput: this.first,
-                  secondInput: this.second,
-                  thirdInput: this.third,
-                },
-              })
-            "
+            @click="saveInput"
           ></bookingButton>
         </div>
       </div>
@@ -66,66 +39,42 @@
     data() {
       return {
         value: "ok",
-        first: {
-          value: "",
-          id: 1,
-          amount: 1.0,
-        },
-        second: {
-          value: "",
-          id: 2,
-          amount: 1.0,
-        },
-        third: {
-          value: "",
-          id: 3,
-          amount: 1.0,
-        },
+        valuesInput: [],
+        inputs: [
+          {
+            value: "",
+            name: "first",
+            amount: 1.0,
+            placeholder: "es. prosciutto crudo.."
+          },
+          {
+            value: "",
+            name: "second",
+            amount: 1.0,
+            placeholder: "es. patate al forno.."
+          },
+          {
+            value: "",
+            name: "third",
+            amount: 1.0,
+            placeholder: "es. brie.."
+          },
+        ]
+        
       };
     },
     methods: {
-      onInputFirst(event) {
-        const value = event.target.value;
-        this.first.value = value;
+      onInput(id, value) {
+        this.inputs[id].value = value;
       },
-      onInputSecond(event) {
-        const value = event.target.value;
-        this.second.value = value;
-      },
-      onInputThird(event) {
-        const value = event.target.value;
-        this.third.value = value;
+      saveInput() {
+        this.$emit("updateInput", {inputs: this.inputs});
       },
     },
   };
   </script>
   
   <style lang="scss" scoped>
-  .card {
-    margin: 7px;
-    background-color: #282525;
-    color: white;
-    box-shadow: 2px 2px 2px rgba(245, 245, 245, 0.347);
-  }
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .card-text {
-    font-size: 13px;
-  }
-  .styleBox {
-    border: none;
-    border-radius: 7px;
-    height: 50px;
-    padding-left: 10px;
-  }
-  .styleBox:focus {
-    border: 3px solid rgba(66, 123, 248, 0.676);
-    outline: none;
-  }
-  
   .imgContainer {
     display: flex;
     flex-direction: row;

@@ -1,5 +1,5 @@
 <template>
-    <div class="card" style="width: 18rem">
+    <div class="card">
       <img
         v-if="baseSelected"
         :src="require('@/assets/img/' + baseSelected.url)"
@@ -17,6 +17,7 @@
         <select
           class="selectBase styleBox"
           :class="{ baseSelected: baseSelected }"
+          name="base"
           @change="onBaseSelected"
           v-model="baseSelected"
           required
@@ -60,34 +61,6 @@
   </script>
   
   <style lang="scss" scoped>
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .card {
-    margin: 7px;
-    background-color: #282525;
-    color: white;
-    box-shadow: 2px 2px 2px rgba(245, 245, 245, 0.347);
-  }
-  .styleBox {
-    border: none;
-    border-radius: 7px;
-    height: 50px;
-    padding-left: 10px;
-  }
-  .styleBox:focus {
-    border: 3px solid rgba(66, 123, 248, 0.676);
-    outline: none;
-  }
-  
-  .card-img-top {
-    margin-left: 40%;
-    margin-top: 10px;
-    width: 50px;
-    height: 50px;
-  }
   .card-text {
     font-size: 13px;
   }

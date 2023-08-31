@@ -82,15 +82,11 @@
           );
         }
       },
-      addInput({ allInput }) {
+      addInput({inputs}) {
         this.fstIngredient.splice(0, this.fstIngredient.length);
         this.amountIngredient.splice(0, this.amountIngredient.length);
-        const inputs = [
-          allInput.firstInput,
-          allInput.secondInput,
-          allInput.thirdInput,
-        ];
-        inputs.forEach((input) => {
+
+        inputs.forEach(input => {
           if (input.value != "") {
             this.fstIngredient.push(input.value);
             this.amountIngredient.push(input.amount);

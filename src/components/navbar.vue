@@ -5,7 +5,7 @@
           <img 
               id="logo" 
               :src="imgDefault" 
-              alt=""
+              alt="logo a forma di pizza"
               @click="clickTo({name: 'index'})"
               >
       </RouterLink>

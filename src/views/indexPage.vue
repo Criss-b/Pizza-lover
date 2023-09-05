@@ -6,7 +6,6 @@
     </div>
     <div class="descrContainer">
         <p>Esplora il menu e ordina la tua pizza, oppure creane una! 🍕😍</p>
-        <p>(Web app fittizia)</p>
       </div>
 </template>
   
@@ -75,7 +74,7 @@
     align-items: center;
   }
   }
-  @media only screen and (min-width: 321px) and (max-width: 425px) {
+  @media only screen and (min-width: 321px) and (max-width: 450px) {
     .indexContainer {
       background-position: center;
       font-size: 60px;
@@ -85,7 +84,7 @@
       align-items: center;
   }
   }
- @media only screen and (min-width: 426px) and (max-width: 768px) {
+ @media only screen and (min-width: 451px) and (max-width: 768px) {
   .indexContainer {
     font-size: 75px;
     display: flex;

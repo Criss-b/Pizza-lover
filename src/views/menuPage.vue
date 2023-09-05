@@ -47,7 +47,6 @@ import { mapMutations } from 'vuex';
     min-height: 100vh;
     background-size: cover;
     background-attachment: fixed;
-    font-family: ananias;
   }
   .menu {
     display: flex;
@@ -63,6 +62,7 @@ import { mapMutations } from 'vuex';
     margin-left: 5px;
     margin-right: 5px;
     padding: 20px;
+    font-family: ananias;
   }
   </style>
   

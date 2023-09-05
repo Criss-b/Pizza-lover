@@ -349,9 +349,9 @@ ${this.message}`
     position: relative;
     align-items: center;
     padding: 25px;
+    border: none;
   }
   .label {
-    margin-right: 10px;
     color: white;
     font-weight: 100;
   }
@@ -393,6 +393,7 @@ ${this.message}`
     border: none;
     margin: 2px;
     height: 100px;
+    padding-top: 5px;
   }
   .booking {
     height: 25px;
@@ -457,7 +458,7 @@ ${this.message}`
   
     .textarea {
       margin: 2px;
-      height: 50px;
+      height: 90px;
       width: 200px;
       padding-left: 5px;
     }
@@ -504,7 +505,7 @@ ${this.message}`
     }
     .textarea {
       margin: 2px;
-      height: 50px;
+      height: 90px;
       width: 200px;
       padding-left: 5px;
     }

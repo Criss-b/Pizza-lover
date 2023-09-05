@@ -1,29 +1,19 @@
 <template>
     <div class="pizzeContainer">
-      <span class="info">
-        nella sezione "prenota" compila i campi per creare l'ordine
-      </span>
-      <list-pizze
-        title="PIZZE CLASSICHE"
-        th1="GUSTO"
-        th2="PREZZO"
-        v-model="listPizze"
-        :options="listPizze"
-      ></list-pizze>
-    </div>
-    <div class="pizzeContainer">
-      <h2>LE VOSTRE CREAZIONI</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>GUSTO</th>
-            <th>PREZZO</th>
-          </tr>
-        </thead>
-        <tbody class="tableContent">
-          <new-pizza></new-pizza>
-        </tbody>
-      </table>
+      <div class="tableContent">
+        <list-pizze
+          title="PIZZE CLASSICHE"
+          th1="GUSTO"
+          th2="PREZZO"
+          v-model="listPizze"
+          :options="listPizze"
+        ></list-pizze>
+        <new-pizza
+          title="LE VOSTRE CREAZIONI"
+          th1="GUSTO"
+          th2="PREZZO"
+          ></new-pizza>
+      </div>
     </div>
   </template>
   
@@ -130,69 +120,13 @@
   .pizzeContainer {
     background-color: #282525;
     min-height: 100vh;
-    padding-bottom: 40px;
+    padding-bottom: 400px;
   }
-  .info {
-    position: absolute;
-    text-align: center;
-    right: 5%;
-    top: 150px;
-    width: 250px;
-    height: auto;
-    color: white;
-    background-color: #282525;
-    border-radius: 5px;
-    box-shadow: 0px 0px 6px 2px rgba(245, 245, 245, 0.347);
-  }
-  h2 {
-    color: white;
-    padding: 50px;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  table {
-    color: white;
-    margin-left: 5%;
-    width: 90%;
-    justify-self: unset;
-    margin-bottom: 25px;
-  }
-  thead {
-    font-size: x-large;
-  }
-  th {
-    color: white;
-  }
-  th:last-child {
-    text-align: end;
-  }
-  @media only screen and (max-width: 350px) {
-    thead {
-      font-size: medium;
-    }
-    .info {
-      font-size: 10px;
-      top: 190px;
-      width: 180px;
-      height: auto;
-    }
-  }
-  @media only screen and (min-width: 351px) and (max-width: 1300px) {
-    thead {
-      font-size: large;
-    }
-    .info {
-      text-align: center;
-      font-size: 10px;
-      top: 190px;
-      width: 175px;
-      height: auto;
-    }
-  }
-  @media only screen and (min-width: 1301px) {
-    thead {
-      font-size: x-large;
-    }
+  .tableContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
   </style>
   

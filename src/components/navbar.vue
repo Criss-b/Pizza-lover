@@ -109,6 +109,7 @@ import { mapMutations, mapState } from 'vuex';
     margin-left: 5px;
     margin-right: 5px;
     padding: 20px;
+    font-family: ananias;
   }
   
   button:last-child {

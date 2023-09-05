@@ -61,7 +61,11 @@
     height: 50px;
     margin-top: 1rem;
   }
-  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
   .labelCheckbox {
     color: white;
     display: flex;

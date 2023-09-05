@@ -1,54 +1,57 @@
 <template>
-    <tr
-      v-for="pizza of newPizze"
-      :key="pizza.tasty"
-      :tasty="pizza.tasty"
-      :ing="pizza.ing"
-      :price="pizza.price"
-    >
-      <td>
-        <strong>{{ pizza.tasty }}</strong> ({{ pizza.ing }})
-      </td>
-      <td>{{ pizza.price }}€</td>
-    </tr>
-  </template>
+      <h2>{{ title }}</h2>
+      <table>
+        <thead>
+          <th>{{ th1 }}</th>
+          <th>{{ th2 }}</th>
+        </thead>
+        <tbody>
+          <tr
+            v-for="pizza of newPizze"
+            :key="pizza.tasty"
+            :tasty="pizza.tasty"
+            :ing="pizza.ing"
+            :price="pizza.price"
+          >
+            <td>
+              <strong>{{ pizza.tasty }}</strong> ({{ pizza.ing }})
+            </td>
+            <td>{{ pizza.price }}€</td>
+          </tr>
+        </tbody>
+      </table>
+</template>
   
   <script>
   import { mapState } from "vuex";
   export default {
     name: "new-pizza",
+    props: {
+      title: {
+        type: String,
+        default: "",
+      },
+      th1: {
+        type: String,
+        default: "",
+      },
+      th2: {
+        type: String,
+        default: "",
+      },
+    },
     computed: {
       ...mapState(["newPizze"]),
     },
   };
   </script>
   
-  <style lang="scss" scoped>
-  tr {
-    margin: 20px 0px;
-    border-bottom: 1px solid #ffffff2d;
-  }
-  
-  strong {
+<style lang="scss" scoped>
+  h2 {
     color: white;
+    padding: 50px;
+    margin-bottom: 30px;
+    text-align: center;
   }
-  td:last-child {
-    text-align: end;
-  }
-  @media only screen and (max-width: 350px) {
-    td {
-      font-size: small;
-    }
-  }
-  @media only screen and (min-width: 351px) and (max-width: 1300px) {
-    td {
-      font-size: medium;
-    }
-  }
-  @media only screen and (min-width: 1301px) {
-    td {
-      font-size: large;
-    }
-  }
-  </style>
+</style>
   

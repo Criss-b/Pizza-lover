@@ -139,10 +139,14 @@
     flex-direction: column;
     align-items: center;
     padding: 25px;
+    border: none;
   }
-  
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
   .label {
-    margin-right: 10px;
+    margin-bottom: 10px;
     color: white;
     font-weight: 100;
   }
@@ -153,6 +157,7 @@
     width: 90%;
   }
   .textarea {
+    padding-top: 5px;
     background-color: #3b3838;
     color: white;
     border: none;
@@ -181,11 +186,15 @@
     width: 90%;
     align-items: center;
   }
-  @media only screen and (min-width: 330px) and (max-width: 426px) {
+  @media only screen and (max-width: 426px) {
     .row {
       display: flex;
       flex-direction: column;
     }
+    .btnContainer {
+      width: 100%;
+      justify-content: center;
+  }
   }
   </style>
   

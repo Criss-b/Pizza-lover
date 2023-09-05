@@ -69,7 +69,11 @@
   </script>
   
   <style lang="scss" scoped>
- 
+ .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+ }
   .btnContainer {
     display: flex;
     flex-direction: column;

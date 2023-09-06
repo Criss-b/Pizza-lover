@@ -56,7 +56,7 @@ import { mapMutations } from 'vuex';
   }
   button {
     color: #fa5252;
-    font-weight: 500;
+    font-size: 20px;
     border: none;
     background-color: transparentize($color: #00000000, $amount: 0);
     margin-left: 5px;

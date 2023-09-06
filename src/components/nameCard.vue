@@ -2,7 +2,7 @@
     <div class="card">
       <img class="card-img-top" src="@/assets/img/namePizza.png" />
       <div class="card-body">
-        <h5 class="card-title">1) Scegli un nome per la tua pizza</h5>
+        <h5 class="card-title">1) Scegli un nome per la tua pizza *</h5>
         <p class="card-text">Niente nomi banali 😁</p>
         <div class="inputTextContainer">
           <input

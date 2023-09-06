@@ -40,7 +40,7 @@
   };
   </script>
   
-  <style lang="scss" scoped>  
+  <style lang="scss" scoped>
   .ul {
     display: flex;
     flex-direction: row;

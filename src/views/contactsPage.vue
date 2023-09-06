@@ -133,11 +133,11 @@
     flex-direction: column;
     align-items: center;
   }
-  
   fieldset {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 30vw;
     padding: 25px;
     border: none;
   }
@@ -154,7 +154,7 @@
     background-color: #3b3838;
     color: white;
     margin: 2px;
-    width: 90%;
+    width: 100%;
   }
   .textarea {
     padding-top: 5px;
@@ -163,7 +163,7 @@
     border: none;
     margin: 2px;
     height: 185px;
-    width: 90%;
+    width: 100%;
   }
   .btnContainer {
     display: flex;
@@ -186,15 +186,18 @@
     width: 90%;
     align-items: center;
   }
-  @media only screen and (max-width: 426px) {
+  @media only screen and (max-width: 769px) {
     .row {
       display: flex;
       flex-direction: column;
     }
+    fieldset {
+      width: 100vw;
+    }
     .btnContainer {
       width: 100%;
       justify-content: center;
-  }
+    }
   }
   </style>
   

@@ -118,6 +118,7 @@ import { mapMutations, mapState } from 'vuex';
   button:hover {
     background-color: #4e49498c;
     border-radius: 10px;
+    cursor: pointer;
   }
   
   #logo:hover {

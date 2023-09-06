@@ -7,7 +7,7 @@
       />
       <img v-else src="@/assets/img/choose.png" class="card-img-top" />
       <div class="card-body">
-        <h5 class="card-title">2) Scegli l'impasto</h5>
+        <h5 class="card-title">2) Scegli l'impasto *</h5>
         <p class="card-text">
           -Impasto classico: farina bianca 00 (3.00 €)<br />
           -integrale: farina di farro integrale (3.50 €)

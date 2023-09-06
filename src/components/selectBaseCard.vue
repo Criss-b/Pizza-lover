@@ -7,7 +7,7 @@
       />
       <img v-else src="@/assets/img/choose.png" class="card-img-top" />
       <div class="card-body">
-        <h5 class="card-title">3) Scegli la base</h5>
+        <h5 class="card-title">3) Scegli la base *</h5>
         <p class="card-text">
           -Rossa: passata di pomodro (1.00 €)<br />
           -Bianca: mozzarella (1.00 €)<br />

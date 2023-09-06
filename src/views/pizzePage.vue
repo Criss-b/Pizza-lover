@@ -120,7 +120,7 @@
   .pizzeContainer {
     background-color: #282525;
     min-height: 100vh;
-    padding-bottom: 400px;
+    padding-bottom: 100px;
   }
   .tableContent {
     display: flex;

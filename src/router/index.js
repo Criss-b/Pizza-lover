@@ -5,31 +5,31 @@ const routes = [
     name: "index",
     path: "/",
     component: () =>
-      import(/* webpackChunkName: "Index"*/ "../views/indexPage.vue"),
+    import(/* webpackChunkName: "Home" */ "../views/indexPage.vue"),
   },
   {
     name: "pizze",
     path: "/pizze",
     component: () =>
-      import(/* webpackChunkName: "Pizze"*/ "../views/pizzePage.vue"),
+      import(/* webpackChunkName: "Pizze" */ "../views/pizzePage.vue"),
   },
   {
     name: "create",
     path: "/create",
     component: () =>
-      import(/* webpackChunkName: "Create"*/ "../views/createPage.vue"),
+      import(/* webpackChunkName: "Create" */ "../views/createPage.vue"),
   },
   {
     name: "book",
     path: "/book",
     component: () =>
-      import(/* webpackChunkName: "Book"*/ "../views/bookPage.vue"),
+      import(/* webpackChunkName: "Book" */ "../views/bookPage.vue"),
   },
   {
     name: "contacts",
     path: "/contacts",
     component: () =>
-      import(/* webpackChunkName: "Contacts"*/ "../views/contactsPage.vue"),
+      import(/* webpackChunkName: "Contacts" */ "../views/contactsPage.vue"),
   },
   {
     name: "menu",

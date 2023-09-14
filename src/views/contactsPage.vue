@@ -57,10 +57,9 @@
     </div>
     <div class="imgContainer">
       <img
-        id="indexImage"
-        class="img-fluid"
-        src="@/assets/img/contact.webp"
+        src="https://cdn.pixabay.com/photo/2017/12/05/20/08/pizza-3000271_1280.jpg"
         alt="piano pizza"
+        SameSite="Strict"
       />
     </div>
   </template>
@@ -115,18 +114,7 @@
     background-size: cover;
     background-attachment: fixed;
     padding-bottom: 40px;
-    font-family: ananias;
     color: white;
-  }
-  .styleBox {
-    border: none;
-    border-radius: 7px;
-    height: 50px;
-    padding-left: 10px;
-  }
-  .styleBox:focus {
-    border: 3px solid rgba(66, 123, 248, 0.676);
-    outline: none;
   }
   .form {
     display: flex;
@@ -134,21 +122,11 @@
     align-items: center;
   }
   fieldset {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 30vw;
-    padding: 25px;
-    border: none;
   }
   .row {
     display: flex;
     flex-direction: row;
-  }
-  .label {
-    margin-bottom: 10px;
-    color: white;
-    font-weight: 100;
   }
   .text {
     background-color: #3b3838;
@@ -164,6 +142,7 @@
     margin: 2px;
     height: 185px;
     width: 100%;
+    resize: none;
   }
   .btnContainer {
     display: flex;
@@ -181,9 +160,9 @@
     justify-content: center;
     background-color: #282525;
   }
-  #indexImage {
-    height: auto;
+  img {
     width: 90%;
+    height: auto;
     align-items: center;
   }
   @media only screen and (max-width: 769px) {

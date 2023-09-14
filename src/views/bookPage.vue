@@ -5,7 +5,8 @@
         <fieldset>
           <img
             class="imgLeft1"
-            src="@/assets/img/icons8-lista-dei-desideri-96.png"
+            src="@/assets/img/list.webp"
+            alt="immagine lista"
           />
           <label class="label" for="name">Nome prenotazione</label>
           <input
@@ -17,7 +18,9 @@
             required
             autocomplete="off"
           />
-          <img class="imgRight1" src="@/assets/img/icons8-pizza-kawaii-96.png" />
+          <img class="imgRight1"
+          src="@/assets/img/kawaii.webp"
+          alt="immagine fetta di pizza"/>
         </fieldset>
   
         <fieldset>
@@ -97,17 +100,20 @@
         </fieldset>
   
         <fieldset>
-          <img class="imgLeft2" src="@/assets/img/icons8-pizza-kawaii-96.png" />
-          <label class="label" for="note">Note</label>
+          <img class="imgLeft2"
+          src="@/assets/img/kawaii.webp"
+          alt="immagine fetta di pizza"/>
+          <label class="label" for="notes">Note</label>
           <textarea
             class="textarea styleBox"
             placeholder="Specificare se allergie o se aggiungere ingrediente"
-            v-model="allergies"
-            id="note"
+            v-model="notes"
+            id="notes"
           ></textarea>
           <img
             class="imgRight2"
-            src="@/assets/img/icons8-lista-dei-desideri-96.png"
+            src="@/assets/img/list.webp"
+            alt="immagine lista"
           />
         </fieldset>
         <bookingButton
@@ -131,7 +137,7 @@
       return {
         name: "",
         number: "",
-        allergies: "",
+        notes: "",
         add: "➕",
         remove: "🗑️",
         book: "PRENOTA",
@@ -267,10 +273,10 @@
           this.firstChoice = this.firstChoice + ", ";
           this.otherChoice = this.selectedPizza.join(", ");
         }
-        if (this.allergies == "") {
-          this.allergies = "Nessuna";
+        if (this.notes == "") {
+          this.notes = "Nessuna";
         } else {
-          this.allergies;
+          this.notes;
         }
   
         this.summary = this.totalPrice.reduce((acc, item) => acc + item, 0);
@@ -289,7 +295,7 @@
 Pizza:
 ${this.firstChoice}
 ${this.otherChoice}
-Note: ${this.allergies}
+Note: ${this.notes}
   
 Totale: ${formattedSummary}
 (di cui IVA ${formattedIva})`;
@@ -317,8 +323,6 @@ ${this.message}`
   <style lang="scss" scoped>
   .bookContainer {
     background-color: #282525;
-    background-size: cover;
-    background-attachment: fixed;
     min-height: 100vh;
     padding-bottom: 40px;
     color: white;
@@ -333,28 +337,7 @@ ${this.message}`
     flex-direction: column;
     align-items: center;
   }
-  .styleBox {
-    border: none;
-    border-radius: 7px;
-    height: 50px;
-    padding-left: 10px;
-  }
-  .styleBox:focus {
-    border: 3px solid rgba(66, 123, 248, 0.676);
-    outline: none;
-  }
-  fieldset {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    align-items: center;
-    padding: 25px;
-    border: none;
-  }
-  .label {
-    color: white;
-    font-weight: 100;
-  }
+
   .text {
     background-color: #3b3838;
     color: white;
@@ -375,7 +358,7 @@ ${this.message}`
     cursor: pointer;
   }
   .selectPizza option {
-    background-color: #282525;
+    background-color: #3b3838;
     color: white;
   }
   .selectedPizza {
@@ -394,42 +377,40 @@ ${this.message}`
     margin: 2px;
     height: 100px;
     padding-top: 5px;
+    resize: none;
   }
   .booking {
     height: 25px;
     width: 10%;
     font-size: 15px;
   }
-  .imgLeft1 {
+  .imgLeft1 , .imgRight1 , .imgLeft2 , .imgRight2 {
     position: absolute;
+  }
+  .imgLeft1 {
     top: -30px;
     left: -250px;
-    transform: rotate(25deg);
-    height: 50px;
-    width: 50px;
   }
-  .imgRight1 {
-    position: absolute;
+  .imgRight1{
     right: -300px;
-    transform: rotate(335deg);
-    height: 80px;
-    width: 80px;
   }
   .imgLeft2 {
-    position: absolute;
     left: -350px;
     top: 60px;
+  }
+  .imgRight2 {
+    bottom: -30px;
+    right: -250px;
+  }
+  .imgLeft1 , .imgRight2 {
+    height: 50px;
+    width: 50px;
+    transform: rotate(25deg);
+  }
+  .imgRight1 , .imgLeft2 {
     transform: rotate(335deg);
     height: 80px;
     width: 80px;
-  }
-  .imgRight2 {
-    position: absolute;
-    bottom: -30px;
-    right: -250px;
-    transform: rotate(25deg);
-    height: 50px;
-    width: 50px;
   }
   @media only screen and (max-width: 376px) {
     .title {
@@ -467,16 +448,7 @@ ${this.message}`
       width: 20%;
       font-size: 10px;
     }
-    .imgLeft1 {
-      display: none;
-    }
-    .imgRight1 {
-      display: none;
-    }
-    .imgLeft2 {
-      display: none;
-    }
-    .imgRight2 {
+    .imgLeft1 ,.imgRight1 ,.imgLeft2 ,.imgRight2 {
       display: none;
     }
   }
@@ -514,16 +486,7 @@ ${this.message}`
       width: 20%;
       font-size: 10px;
     }
-    .imgLeft1 {
-      display: none;
-    }
-    .imgRight1 {
-      display: none;
-    }
-    .imgLeft2 {
-      display: none;
-    }
-    .imgRight2 {
+    .imgLeft1 ,.imgRight1 , .imgLeft2 , .imgRight2 {
       display: none;
     }
   }
@@ -562,35 +525,27 @@ ${this.message}`
       font-size: 12px;
     }
     .imgLeft1 {
-      position: absolute;
       top: -10%;
       left: -20%;
-      transform: rotate(25deg);
-      height: 40px;
-      width: 40px;
     }
     .imgRight1 {
-      position: absolute;
       right: -25%;
-      transform: rotate(335deg);
-      height: 55px;
-      width: 55px;
     }
     .imgLeft2 {
-      position: absolute;
       left: -18%;
       top: 15%;
-      transform: rotate(335deg);
-      height: 55px;
-      width: 55px;
     }
     .imgRight2 {
-      position: absolute;
       bottom: -10%;
       right: -18%;
-      transform: rotate(25deg);
+    }
+    .imgLeft1 , .imgRight2 {
       height: 40px;
       width: 40px;
+    }
+    .imgRight1 , .imgLeft2 {
+      height: 55px;
+      width: 55px;
     }
   }
   @media only screen and (min-width: 676px) and (max-width: 1024px) {
@@ -600,36 +555,28 @@ ${this.message}`
       font-size: 15px;
     }
     .imgLeft1 {
-      position: absolute;
       top: -10%;
       left: -25%;
-      transform: rotate(25deg);
-      height: 40px;
-      width: 40px;
     }
     .imgRight1 {
-      position: absolute;
       top: 50%;
       right: -25%;
-      transform: rotate(335deg);
-      height: 55px;
-      width: 55px;
     }
     .imgLeft2 {
-      position: absolute;
       left: -45%;
       top: 25%;
-      transform: rotate(335deg);
-      height: 55px;
-      width: 55px;
     }
     .imgRight2 {
-      position: absolute;
       bottom: 15%;
       right: -45%;
-      transform: rotate(25deg);
+    }
+    .imgLeft1 , .imgRight2 {
       height: 40px;
       width: 40px;
+    }
+    .imgRight1 , .imgLeft2 {
+      height: 55px;
+      width: 55px;
     }
   }
   </style>

@@ -1,5 +1,9 @@
 <template>
     <div class="card">
+      <div class="imgContainer">
+        <img v-if="(this.myPizza != '')" src="@/assets/img/pizzaIngredients.webp" alt="pizza completa"/>
+        <img v-else src="@/assets/img/makingPizza.webp" alt="pasta con mattarello"/>
+      </div>
       <div class="card-body">
         <h5 class="card-title">6) La tua pizza</h5>
         <p class="card-text">
@@ -9,7 +13,7 @@
         </p>
         <div class="btnContainer">
           <bookingButton 
-            class="btnClass" 
+            class="btn" 
             :value="confirm"
             required
             >{{ confirm }}</bookingButton>
@@ -28,6 +32,7 @@
     data() {
       return {
         confirm: "Visualizza pizza",
+        icon: false,
       };
     },
     props: {
@@ -81,15 +86,19 @@
     justify-content: flex-end;
     margin-bottom: 0.9rem;
   }
-   .btnClass {
+   .btn {
+    color: #fbbf1a;
     text-align: center;
     height: 25px;
     width: 90%;
     font-size: 10px;
     margin-top: 2rem;
   }
+  .btn:hover {
+    color: #282525;
+  }
   @media only screen and (max-width: 350px) {
-   .btnClass {
+   .btn {
       height: 25px;
       font-size: 0.9rem;
       margin-top: 3rem;

@@ -106,10 +106,14 @@ import bookingButton from "./bookingButton.vue";
     margin-bottom: 0.9rem;
   }
   .btn {
+    color: #fa5252;
     height: 25px;
     width: 90%;
     font-size: 10px;
     margin-top: 0.8rem;
+  }
+  .btn:hover {
+    color: #282828;
   }
   .confirmIng {
     color: white;

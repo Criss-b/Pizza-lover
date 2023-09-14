@@ -1,8 +1,10 @@
 <template>
     <div class="card">
       <div class="imgContainer">
-        <img src="@/assets/img/basil.png" />
-        <img src="@/assets/img/thyme.png" />
+        <img src="@/assets/img/basil.webp" alt="basilico"/>
+        <img src="@/assets/img/oregano.webp" alt="origano"/>
+        <img src="@/assets/img/oil.webp" alt="olio d'oliva"/>
+        <img src="@/assets/img/spicy.webp" alt="olio piccante"/>
       </div>
       <div class="card-body">
         <h5 class="card-title">5) Scegli le spezie</h5>
@@ -51,23 +53,14 @@
   </script>
   
   <style lang="scss" scoped>
-  .imgContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  .imgContainer img {
-    width: 50px;
-    height: 50px;
-    margin-top: 1rem;
-  }
+
   .card-body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
   }
   .labelCheckbox {
-    color: white;
+    color: #282525;
     display: flex;
     align-items: center;
     margin-top: 1.5rem;
@@ -110,8 +103,8 @@
     display: block;
   }
   .labelCheckbox .checkmark:after {
-    left: 9px;
-    top: 5px;
+    left: 7px;
+    top: 0;
     width: 10px;
     height: 15px;
     border: solid white;

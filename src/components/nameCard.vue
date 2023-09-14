@@ -1,11 +1,14 @@
 <template>
     <div class="card">
-      <img class="card-img-top" src="@/assets/img/namePizza.png" />
+      <div class="imgContainer">
+        <img src="@/assets/img/namePizza.webp" alt="fetta di pizza sorridente"/>
+      </div>
       <div class="card-body">
         <h5 class="card-title">1) Scegli un nome per la tua pizza *</h5>
         <p class="card-text">Niente nomi banali 😁</p>
         <div class="inputTextContainer">
           <input
+            autocomplete="off"
             class="styleBox"
             type="text"
             placeholder="es. Gustosa"
@@ -38,25 +41,18 @@
       },
     },
   };
-  </script>
-  
-  <style lang="scss" scoped>
-  .inputTextContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 45px;
-  }
-  .inputTextContainer input {
-    background-color: #3b3838;
-    color: white;
-    border: none;
-    margin: 2px;
-  }
-  @media only screen and (max-width: 426px) {
-    .styleBox {
-      height: 30px;
-    }
-  }
-  </style>
+</script>
+
+<style lang="scss" scoped>
+.inputTextContainer {
+  margin-top: 45px;
+}
+.inputTextContainer input {
+  background-color: #3b3838;
+  color: #fa5252;
+}
+.inputTextContainer input::placeholder {
+  color: #fa525274;
+}
+</style>
   

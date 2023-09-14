@@ -38,7 +38,6 @@ export default createStore({
     CREATE_PIZZA(state, payload) {
       const { tasty, ing, price } = payload;
       state.newPizze.push({ tasty, ing, price });
-      console.log("state.newPizze: ", state.newPizze);
     },
   },
   actions: {},

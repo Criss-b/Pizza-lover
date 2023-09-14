@@ -1,11 +1,14 @@
 <template>
     <div class="card">
-      <img
+      <div class="imgContainer">
+        <img
         v-if="baseSelected"
         :src="require('@/assets/img/' + baseSelected.url)"
-        class="card-img-top"
+        :alt="bases.value"
       />
-      <img v-else src="@/assets/img/choose.png" class="card-img-top" />
+      <img v-else src="@/assets/img/choose.webp"
+      alt="clessidra"/>
+      </div>
       <div class="card-body">
         <h5 class="card-title">3) Scegli la base *</h5>
         <p class="card-text">
@@ -25,7 +28,7 @@
         >
           <option disabled value="">Seleziona..</option>
           <option v-for="base in bases" :key="base.id" :value="base">
-            {{ base.value }}
+            {{ base.value }} ({{ base.amount.toFixed(2) }} €)
           </option>
         </select>
       </div>
@@ -39,15 +42,15 @@
       return {
         baseSelected: "",
         bases: [
-          { id: 1, value: "pomodoro", url: "tomato.png", amount: 1.0 },
-          { id: 2, value: "mozzarella", url: "mozzarella.png", amount: 1.0 },
+          { id: 1, value: "pomodoro", url: "tomato.webp", amount: 1.0 },
+          { id: 2, value: "mozzarella", url: "mozzarella.webp", amount: 1.0 },
           {
             id: 3,
             value: "pomodoro, mozzarella",
-            url: "tomMozz.png",
+            url: "tomMozz.webp",
             amount: 2.0,
           },
-          { id: 4, value: "nessuna base", url: "base.png", amount: 0.0 },
+          { id: 4, value: "nessuna base", url: "base.webp", amount: 0.0 },
         ],
       };
     },
@@ -66,24 +69,23 @@
   }
   .selectBase {
     background-color: #3b3838;
-    color: rgb(133, 133, 133);
+    color: #fa525274;
   }
   .selectBase:hover {
     cursor: pointer;
   }
   .selectBase option {
     cursor: pointer;
-    background-color: #282525;
-    color: white;
+    background-color: #3b3838;
+    color: #fa5252;
+  }
+  .selectBase option:disabled {
+    color: #fa525274;
   }
   .baseSelected {
     background-color: #3b3838;
-    color: white;
+    color: #fa5252;
   }
-  @media only screen and (max-width: 426px) {
-    .styleBox {
-      height: 30px;
-    }
-  }
+
   </style>
   

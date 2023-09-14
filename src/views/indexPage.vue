@@ -1,21 +1,22 @@
 <template>
     <div class="indexContainer">
       <div class="titleIndex">
+        <img fetchpriority="low" src="@/assets/img/pizza.webp" loading="lazy" alt="pizza mangiata" SameSite="Strict"><!-- src="https://cdn-icons-png.flaticon.com/512/1404/1404945.png" -->
         <h1>PIZZA LOVER</h1>
-        <p>Esplora il menu e ordina la tua pizza, oppure creane una!<!--  🍕😍 --></p>
+          <p>Esplora il menu e ordina la tua pizza, oppure creane una!</p>
       </div>
       <div class="descContainer">
         <div class="description">
-          <h3>PRENOTA</h3>
-          <p>Prenotare la tua pizza e' semplice, vai nella sezione "PRENOTA"
-            compila i campi richiesti e verra' creato in automatico un messaggio Whatsapp.
+          <h2>CREA LA TUA PIZZA</h2>
+            <p>Le pizze proposte non sono di tuo gradimento? 
+              Entra nella sezione "CREA LA TUA PIZZA" e dai libero sfogo ai tuoi gusti!
           </p>
         </div>
         <div class="description">
-          <h3>CREA LA TUA PIZZA</h3>
-          <p>Le pizze proposte non sono di tuo gradimento? 
-            Entra nella sezione "CREA LA TUA PIZZA" e dai libero sfogo ai tuoi gusti!
-          </p>
+          <h2>PRENOTA</h2>
+            <p>Prenotare la tua pizza e' semplice, vai nella sezione "PRENOTA"
+              compila i campi richiesti e verra' creato in automatico un messaggio Whatsapp.
+            </p>
         </div>
       </div>
     </div>
@@ -29,7 +30,8 @@
   
 <style lang="scss" scoped>
   .indexContainer {
-    background-color: #282525;
+    background: rgb(40, 37, 37);
+    background: radial-gradient(circle, rgba(40,37,37,0.7289040616246498) 0%, rgba(40,37,37,1) 50%);
     min-height: 100vh;
     width: 100%;
     display: flex;
@@ -38,7 +40,8 @@
     padding-bottom: 90px;
   }
   .titleIndex {
-    background: url("@/assets/img/pizza.png") no-repeat center;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
     text-shadow: 2px 2px #282525;
     margin: 100px 0;
@@ -48,11 +51,21 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: ananias;
     border-radius: 10px;
+  }
+  .titleIndex img {
+    position: absolute;
+    z-index: 0;
+    width: 300px;
+    height: 300px;
+    transform: rotate(180deg);
+  }
+  .titleIndex h1, p {
+    z-index: 1;
   }
   h1 {
     font-size: 6rem;
+    word-break: keep-all;
   }
   .descContainer {
     display: flex;
@@ -67,7 +80,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: ananias;
     background-color: #282525;
     margin: 60px 0;
     padding: 20px 10px;
@@ -78,7 +90,7 @@
     border-radius: 10px;
     box-shadow: 0px 0px 20px 2px rgba(245, 245, 245, 0.347);
   }
-  .description h3 {
+  .description h2 {
     color: #fa5252;
   }
   p {
@@ -87,39 +99,22 @@
     margin-top: 20px;
     
   }
-@media only screen and (max-width: 364px) {
+@media only screen and (max-width: 387px) {
   h1{
     font-size: 2.4rem;
   }
-  .descContainer {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .description {
-    width: 90%;
-    height: 40vh;
-  }
 }
-
-@media only screen and (min-width: 365px) and (max-width: 426px) {
+@media only screen and (min-width: 387px) and (max-width: 583px) {
   h1{
-    font-size: 2.8rem;
-  }
-  .descContainer {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .description {
-    width: 90%;
-    height: 40vh;
+    font-size: 3rem;
   }
 }
-@media only screen and (min-width: 426px) and (max-width: 789px) {
+@media only screen and (min-width: 583px) and (max-width: 789px) {
   h1 {
-    font-size: 5.5rem;
+    font-size: 4rem;
   }
+}
+@media screen and (max-width: 885px){
   .descContainer {
     flex-direction: column;
     align-items: center;
@@ -127,7 +122,7 @@
   }
   .description {
     width: 90%;
-    height: 40vh;
+    height: 100%;
   }
 }
 </style>

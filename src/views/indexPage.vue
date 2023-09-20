@@ -1,7 +1,7 @@
 <template>
     <div class="indexContainer">
       <div class="titleIndex">
-        <img fetchpriority="low" src="@/assets/img/pizza.webp" loading="lazy" alt="pizza mangiata" SameSite="Strict"><!-- src="https://cdn-icons-png.flaticon.com/512/1404/1404945.png" -->
+        <img src="@/assets/img/pizza.webp" alt="pizza mangiata">
         <h1>PIZZA LOVER</h1>
           <p>Esplora il menu e ordina la tua pizza, oppure creane una!</p>
       </div>
@@ -103,16 +103,25 @@
   h1{
     font-size: 2.4rem;
   }
+  .titleIndex img {
+    width: 150px;
+    height: 150px;
+  }
 }
 @media only screen and (min-width: 387px) and (max-width: 583px) {
   h1{
     font-size: 3rem;
+  }
+  .titleIndex img {
+    width: 200px;
+    height: 200px;
   }
 }
 @media only screen and (min-width: 583px) and (max-width: 789px) {
   h1 {
     font-size: 4rem;
   }
+
 }
 @media screen and (max-width: 885px){
   .descContainer {

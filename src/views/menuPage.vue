@@ -47,6 +47,7 @@ export default {
   min-height: 100vh;
   background-size: cover;
   background-attachment: fixed;
+  padding-bottom: 90px;
 }
 .menu {
   display: flex;

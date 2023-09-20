@@ -324,7 +324,7 @@ ${this.message}`
   .bookContainer {
     background-color: #282525;
     min-height: 100vh;
-    padding-bottom: 40px;
+    padding-bottom: 90px;
     color: white;
     padding-top: 30px;
   }
@@ -368,7 +368,7 @@ ${this.message}`
   .btn {
     height: 25px;
     width: 8%;
-    font-size: 10px;
+    font-size: 12px;
   }
   .textarea {
     background-color: #3b3838;
@@ -382,7 +382,7 @@ ${this.message}`
   .booking {
     height: 25px;
     width: 10%;
-    font-size: 15px;
+    font-size: 17px;
   }
   .imgLeft1 , .imgRight1 , .imgLeft2 , .imgRight2 {
     position: absolute;
@@ -431,7 +431,7 @@ ${this.message}`
       width: 70%;
     }
     .btn {
-      font-size: 8px;
+      font-size: 12px;
       height: 40px;
       width: 10%;
       padding: 0;
@@ -445,8 +445,8 @@ ${this.message}`
     }
     .booking {
       height: 25px;
-      width: 20%;
-      font-size: 10px;
+      width: 25%;
+      font-size: 12px;
     }
     .imgLeft1 ,.imgRight1 ,.imgLeft2 ,.imgRight2 {
       display: none;
@@ -473,7 +473,7 @@ ${this.message}`
     .btn {
       height: 40px;
       width: 10%;
-      font-size: 10px;
+      font-size: 12px;
     }
     .textarea {
       margin: 2px;
@@ -484,7 +484,7 @@ ${this.message}`
     .booking {
       height: 25px;
       width: 20%;
-      font-size: 10px;
+      font-size: 12px;
     }
     .imgLeft1 ,.imgRight1 , .imgLeft2 , .imgRight2 {
       display: none;

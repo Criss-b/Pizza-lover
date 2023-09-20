@@ -43,6 +43,7 @@
   <style lang="scss" scoped>
   .footerContainer {
     position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-content: center;

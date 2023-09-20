@@ -7,9 +7,9 @@
       <div class="card-body">
         <h5 class="card-title">6) La tua pizza</h5>
         <p class="card-text">
-          {{ showName }} <br />
-          {{ showIngredients }} <br />
-          {{ showTotal }} <br />
+          <strong>Nome:</strong>{{ showName }}<br />
+          <strong>Ingredienti:</strong>{{ showIngredients }}<br />
+          <strong>Prezzo:</strong>{{ showTotal }}<br />
         </p>
         <div class="btnContainer">
           <bookingButton 
@@ -43,10 +43,8 @@
     computed: {
       showName() {
        const name = this.myPizza[0];
-        if (name == undefined) {
-          return `nome: `;
-        } else {
-          return `nome: ${name}`;
+        if (name != undefined) {
+          return `${name}`;
         }
       },
       showIngredients() {
@@ -54,19 +52,15 @@
   
         const ingredientsString = ingredientsArray.join(", ");
   
-        if (ingredientsString == "") {
-          return `ingredienti: `;
-        } else {
-          return `ingredienti: ${ingredientsString}`;
+        if (ingredientsString != "") {
+          return `${ingredientsString}`;
         }
       },
       showTotal() {
         const price = this.myPizza[this.myPizza.length - 1];
   
-        if (price == undefined) {
-          return `prezzo: `;
-        } else {
-          return `prezzo: ${price}€`;
+        if (price != undefined) {
+          return `${price}€`;
         }
       },
     },

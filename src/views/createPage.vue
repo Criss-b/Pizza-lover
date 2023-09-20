@@ -1,6 +1,5 @@
 <template>
     <div id="bgImg">
-      <!-- <img id="bgImg" src="@/assets/img/createImage.webp"> -->
       <form @submit.prevent="concatArrays">
         <div class="card-container">
           <name-card @inputName="inputName($event)"></name-card>
@@ -136,6 +135,7 @@
   <style lang="scss" scoped>
   #bgImg {
     background: #282525;
+    padding-bottom: 90px;
   }
   .card-container {
     display: flex;

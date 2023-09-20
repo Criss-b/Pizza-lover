@@ -55,34 +55,37 @@
         </div>
       </form>
     </div>
-    <div class="imgContainer">
-      <img
-        src="https://cdn.pixabay.com/photo/2017/12/05/20/08/pizza-3000271_1280.jpg"
-        alt="piano pizza"
-        SameSite="Strict"
-      />
+    <div class="mapContainer">
+      <GoogleMap
+        api-key="AIzaSyBgj2FFoZMTyoepWzzRjcuJkF9ZMowjk4A"
+        :center="center"
+        :zoom="5.55"
+        style="width: 90%; height: 500px;"
+        >
+          <Marker :options="{ position: center }"/>
+      </GoogleMap>
     </div>
   </template>
   
   <script>
   import bookingButton from "@/components/bookingButton.vue";
   import emailjs from "@emailjs/browser";
-  
+  import {GoogleMap, Marker} from "vue3-google-map";
   export default {
     name: "contactsPage",
     components: {
-      bookingButton,
+      bookingButton, GoogleMap, Marker,
     },
   
     data() {
       return {
         value: "Invia",
+        center: { lat: 41.9515346, lng: 13.7843214},
         user_name: "",
         user_email: "",
         message: "",
       };
     },
-  
     methods: {
       sendEmail() {
         emailjs
@@ -155,15 +158,16 @@
     width: 40%;
     font-size: 15px;
   }
-  .imgContainer {
+  .mapContainer {
     display: flex;
-    justify-content: center;
     background-color: #282525;
+    justify-content: center;
+    padding-bottom: 90px;
   }
-  img {
-    width: 90%;
-    height: auto;
-    align-items: center;
+  @media only screen and (max-width: 424px) {
+    iframe {
+      width: 90vw;
+    }
   }
   @media only screen and (max-width: 769px) {
     .row {

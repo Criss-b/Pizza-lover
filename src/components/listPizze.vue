@@ -11,7 +11,7 @@
             v-for="(option, id) in options"
             :key="id"
           >
-            <td>
+            <td aria-label="impasto ">
               <strong>{{ option.tasty }}</strong> {{ option.ing }}
             </td>
             <td>

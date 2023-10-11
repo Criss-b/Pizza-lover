@@ -63,6 +63,7 @@ export default {
       
     },
     clickTo(to) {
+      this.SET_MENU_ACTIVE(false);
       this.$router.push(to);
     },
   }

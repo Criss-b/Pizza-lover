@@ -21,4 +21,4 @@
 > in questa pagina il modulo è correttamente collegato alla libreria di invio mail @emailjs.com
 > da cui è possibile contattarmi
 
-Link diretto alla web app: [PIZZA-LOVER]()
+Link diretto alla web app: [PIZZA-LOVER](https://cb-pizza-lover.netlify.app/)

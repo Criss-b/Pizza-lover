@@ -28,8 +28,8 @@
     methods: {
       clickTo(to) {
       this.$router.push(to);
+      },
     },
-    }
   };
 </script>
   

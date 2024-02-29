@@ -6,13 +6,13 @@
           <p>Esplora il menu e ordina la tua pizza, oppure creane una!</p>
       </div>
       <div class="descContainer">
-        <div class="description">
-          <h2>CREA LA TUA PIZZA</h2>
-            <p>Le pizze proposte non sono di tuo gradimento? 
-              Entra nella sezione "CREA LA TUA PIZZA" e dai libero sfogo ai tuoi gusti!
-          </p>
-        </div>
-        <div class="description">
+          <div class="description" @click="clickTo({ path: '/create' })">
+              <h2>CREA LA TUA PIZZA</h2>
+              <p>Le pizze proposte non sono di tuo gradimento? 
+                Entra nella sezione "CREA LA TUA PIZZA" e dai libero sfogo ai tuoi gusti!
+              </p>
+          </div>
+        <div class="description"  @click="clickTo({ path: '/book' })">
           <h2>PRENOTA</h2>
             <p>Prenotare la tua pizza e' semplice, vai nella sezione "PRENOTA"
               compila i campi richiesti e verra' creato in automatico un messaggio Whatsapp.
@@ -25,6 +25,11 @@
 <script>
   export default {
     name: "indexPage",
+    methods: {
+      clickTo(to) {
+      this.$router.push(to);
+    },
+    }
   };
 </script>
   
@@ -72,6 +77,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    width: 100%;
   }
   .description {
     position: relative;
@@ -89,6 +95,9 @@
     margin: 0.9rem;
     border-radius: 10px;
     box-shadow: 0px 0px 20px 2px rgba(245, 245, 245, 0.347);
+  }
+  .description:hover {
+    cursor: pointer;
   }
   .description h2 {
     color: #fa5252;

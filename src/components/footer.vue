@@ -1,6 +1,5 @@
 <template>
     <div class="footerContainer">
-      <nav class="nav">
         <ul class="ul">
           <li v-for="item in icons" :key="item">
             <a :href="item.href" target="_blank">
@@ -8,8 +7,7 @@
             </a>
           </li>
         </ul>
-      </nav>
-      <p id="credits">Powered by CB</p>
+      <p id="credits">COPYRIGHT © CB 2023</p>
     </div>
   </template>
   
@@ -46,12 +44,12 @@
     z-index: 1;
     display: flex;
     flex-direction: column;
-    align-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;;
     background-color: #282525;
     height: 110px;
     width: 100%;
-    padding-bottom: 10px;
+    padding: 80px 0;
   }
   .ul {
     display: flex;
@@ -70,7 +68,7 @@
     display: flex;
     justify-content: space-around;
     color: #fa5252;
-    font-size: 0.5rem;
+    font-size: 12px;
   }
   @media only screen and (max-width: 350px) {
     .ul {
